@@ -43,12 +43,12 @@ def get_rhombus(n):
            [get_line(i, n) for i in range(n - 2, -1, -1)]
 
 
-def print_line(n):
-    print(get_line(n - 1, n - 1))
+# def print_line(n):
+#     print(get_line(n - 1, n - 1))
 
 
-def print_square(n):
-    [print(get_line(n - 1, n - 1)) for _ in range(n)]
+# def print_square(n):
+#     [print(get_line(n - 1, n - 1)) for _ in range(n)]
 
 
 def print_rhombus(n):
@@ -58,6 +58,11 @@ def print_rhombus(n):
         print(get_line(i, n))
 
 
-print_rhombus(3)
-print_rhombus(4)
-print_square(5)
+n = int(input())
+
+print_rhombus(n)
+
+
+# print_rhombus(3)
+# print_rhombus(4)
+# print_square(5)
