@@ -68,15 +68,6 @@ class Glass:
         return self.capacity - self.content
 
 
-class_list = [
-    Glass,
-    list,
-    set
-]
-
-[print(klass.__name__) for klass in class_list]
-
-
 
 # glass = Glass()
 # print(glass.fill(100))
