@@ -29,7 +29,7 @@ class Circle:
         return area
 
     def get_circumference(self):
-        circumference = 2 * self.pi * self.radius
+        circumference = 2 * Circle.pi * self.radius
         return circumference
 
 
