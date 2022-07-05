@@ -5,7 +5,7 @@ class Section:
 
     def add_task(self, new_task):
         if new_task in self.tasks:
-            return f'Task is already in the section {self.name}"'
+            return f'Task is already in the section {self.name}'
         self.tasks.append(new_task)
         return f'Task {new_task.details()} is added to the section'
 
