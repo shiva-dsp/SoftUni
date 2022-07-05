@@ -3,17 +3,18 @@ class Section:
         self.name = name
         self.tasks = []
 
-    def add_task(self, new_task: Task):
+    def add_task(self, new_task):
         if new_task in self.tasks:
             return f'Task is already in the section {self.name}"'
         self.tasks.append(new_task)
-        return f'Task {task.details} is added to the section'
+        return f'Task {new_task.details()} is added to the section'
 
     def complete_task(self, task_name: str):
-        if task_name not in self.tasks:
-            return f'Could not find task with the name {task_name}'
-        task.completed = True
-        return f'Completed task {task_name}'
+        for task in self.tasks:
+            if task.name == task_name:
+                task.completed = True
+                return f'Completed task {task_name}'
+        return f'Could not find task with the name {task_name}'
 
     def clean_section(self):
         initial_len = len(self.tasks)
@@ -27,4 +28,7 @@ class Section:
         return f'Cleared {removed_tasks} tasks.'
 
     def view_section(self):
-        return f'Section {self.name}:\n' + '\n'.join([str(f'{Task.details}') for task in self.tasks])
+        result = f'Section {self.name}:\n'
+        for task in self.tasks:
+            result += task.details() + '\n'
+        return result.strip()
