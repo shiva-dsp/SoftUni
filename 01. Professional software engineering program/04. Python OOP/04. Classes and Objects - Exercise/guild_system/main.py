@@ -1,3 +1,6 @@
+from guild_system.project.guild import Guild
+from guild_system.project.player import Player
+
 player = Player("George", 50, 100)
 print(player.add_skill("Shield Break", 20))
 print(player.player_info())
