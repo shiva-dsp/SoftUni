@@ -1,4 +1,4 @@
-from guild_system.project.player import Player
+from .player import Player
 
 
 class Guild:
