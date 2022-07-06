@@ -14,7 +14,6 @@ class Album:
             return f"Cannot add {song.name}. It's a single"
         if song in self.songs:
             return 'Song is already in the album.'
-
         self.songs.append(song)
         return f'Song {song.name} has been added to the album {self.name}.'
 
@@ -37,4 +36,4 @@ class Album:
         result = f'Album {self.name}\n'
         for song in self.songs:
             result += f'== {song.get_info()}\n'
-        return result.strip()
+        return result
