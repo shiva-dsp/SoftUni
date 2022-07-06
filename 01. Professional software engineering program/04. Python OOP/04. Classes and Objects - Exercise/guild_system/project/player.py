@@ -10,7 +10,7 @@ class Player:
 
     def add_skill(self, skill_name: str, mana_cost: int):
         if skill_name in self.skills:
-            return 'Skill already added'
+            return f'Skill already added'
         self.skills[skill_name] = mana_cost
         return f'Skill {skill_name} added to the collection of the player {self.name}'
 

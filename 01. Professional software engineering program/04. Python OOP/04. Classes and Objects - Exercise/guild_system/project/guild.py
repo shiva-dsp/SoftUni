@@ -21,7 +21,7 @@ class Guild:
             if player.name == player_name:
                 self.players.remove(player)
                 player.guild = Player.DEFAULT_GUILD
-                return f'Player {player_name} has been removed from the guild'
+                return f'Player {player_name} has been removed from the guild.'
         return f'Player {player_name} is not in the guild.'
 
     def guild_info(self):
