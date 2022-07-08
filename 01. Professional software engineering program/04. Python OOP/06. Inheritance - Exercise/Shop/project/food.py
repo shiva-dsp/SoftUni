@@ -2,5 +2,7 @@ from .product import Product
 
 
 class Food(Product):
-    def __init__(self, name: str, quantity: int):
-        super().__init__(name, quantity=15)
+    DEFAULT_QUANTITY = 15
+
+    def __init__(self, name: str):
+        super().__init__(name, self.DEFAULT_QUANTITY)

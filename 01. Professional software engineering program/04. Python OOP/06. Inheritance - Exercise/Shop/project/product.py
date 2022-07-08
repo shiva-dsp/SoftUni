@@ -4,10 +4,11 @@ class Product:
         self.quantity = quantity
 
     def decrease(self, quantity: int):
-        pass
+        if self.quantity >= quantity:
+            self.quantity -= quantity
 
     def increase(self, quantity: int):
-        pass
+        self.quantity += quantity
 
     def __repr__(self):
         return self.name
