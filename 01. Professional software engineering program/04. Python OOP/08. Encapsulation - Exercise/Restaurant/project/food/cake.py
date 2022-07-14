@@ -1,4 +1,4 @@
-from Restaurant.project.food.dessert import Dessert
+from project.food.dessert import Dessert
 
 
 class Cake(Dessert):
@@ -6,8 +6,5 @@ class Cake(Dessert):
     CALORIES = 1000
     PRICE = 5
 
-    def __init__(self, name, price, grams, calories):
-        super().__init__(name, price, grams, calories)
-        self.GRAMS = grams
-        self.CALORIES = calories
-        self.PRICE = price
+    def __init__(self, name):
+        super().__init__(name, self.PRICE, self.GRAMS, self.CALORIES)
