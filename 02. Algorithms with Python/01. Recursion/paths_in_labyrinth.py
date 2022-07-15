@@ -42,6 +42,7 @@ def find_all_paths(row, col, matrix, direction, path):
         return
     if matrix[row][col] == 'v':
         return
+
     path.append(direction)
 
     if matrix[row][col] == 'e':
