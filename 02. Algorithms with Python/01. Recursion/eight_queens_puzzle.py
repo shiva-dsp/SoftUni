@@ -39,7 +39,7 @@ def put_queens(row, board, rows, cols, left_diagonals, right_diagonals):
     for col in range(8):
         if can_place_queen(row, col, rows, cols, left_diagonals, right_diagonals):
             set_queen(row, col, board, rows, cols, left_diagonals, right_diagonals)
-            put_queens(row + 1, board,rows, cols, left_diagonals, right_diagonals)
+            put_queens(row + 1, board, rows, cols, left_diagonals, right_diagonals)
             remove_queen(row, col, board, rows, cols, left_diagonals, right_diagonals)
             
 
