@@ -27,6 +27,12 @@ class MovieWorld:
         if len(self.dvds) < MovieWorld.dvd_capacity():
             self.dvds.append(dvd)
 
+    @staticmethod
+    def __find_by_id(entities, entity_id):
+        for entity in entities:
+            if entity.id == entity_id:
+                return entity
+
     def rent_dvd(self, customer_id: int, dvd_id: int):
         customer = self.__find_by_id(self.customers, customer_id)
         dvd = self.__find_by_id(self.dvds, dvd_id)
@@ -43,12 +49,6 @@ class MovieWorld:
         customer.rented_dvds.append(dvd)
         dvd.is_rented = True
         return f'{customer.name} has successfully rented {dvd.name}'
-
-    @staticmethod
-    def __find_by_id(entities, entity_id):
-        for entity in entities:
-            if entity.id == entity_id:
-                return entity
 
     def return_dvd(self, customer_id: int, dvd_id: int):
         customer = self.__find_by_id(self.customers, customer_id)
