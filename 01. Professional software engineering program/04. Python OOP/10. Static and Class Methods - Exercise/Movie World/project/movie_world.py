@@ -44,12 +44,11 @@ class MovieWorld:
         dvd.is_rented = True
         return f'{customer.name} has successfully rented {dvd.name}'
 
-    def __find_by_id(self, entities, entity_id):
+    @staticmethod
+    def __find_by_id(entities, entity_id):
         for entity in entities:
             if entity.id == entity_id:
                 return entity
-            # entity.id = entity_id
-            # return entity
 
     def return_dvd(self, customer_id: int, dvd_id: int):
         customer = self.__find_by_id(self.customers, customer_id)
