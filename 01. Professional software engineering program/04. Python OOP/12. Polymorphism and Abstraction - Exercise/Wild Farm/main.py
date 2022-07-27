@@ -1,4 +1,6 @@
-
+from project.animals.birds import Owl
+from project.food import Vegetable, Fruit, Meat
+from project.animals.birds import Hen
 
 
 owl = Owl("Pip", 10, 10)
