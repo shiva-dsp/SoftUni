@@ -49,8 +49,10 @@ class Account:
         new_amount = self.amount + other.amount
         new_acc = Account(new_owner, new_amount)
 
-        [new_acc.add_transaction(t) for t in self]
-        [new_acc.add_transaction(t) for t in other]
+        new_acc._transactions = self._transactions + other._transactions
+
+        # [new_acc.add_transaction(t) for t in self]
+        # [new_acc.add_transaction(t) for t in other]
 
         return new_acc
 
