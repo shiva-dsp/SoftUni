@@ -56,6 +56,8 @@ class Robot(AbstractWorker):
         print("I don't need to eat....")
 
 
+# ---------------- test --------------------
+
 manager = Manager()
 manager.set_worker(Worker())
 manager.manage()
@@ -68,3 +70,12 @@ manager.lunch_break()
 manager.set_worker(Robot())
 manager.manage()
 manager.lunch_break()
+
+# ------------------- result ----------------
+
+# I'm normal worker. I'm working.
+# Lunch break....(5 secs)
+# I'm super worker. I work very hard!
+# Lunch break....(3 secs)
+# I'm a robot. I'm working....
+# I don't need to eat....
