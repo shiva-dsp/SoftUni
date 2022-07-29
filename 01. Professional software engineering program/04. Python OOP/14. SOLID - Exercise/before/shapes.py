@@ -20,6 +20,12 @@ class AreaCalculator:
         return total
 
 
+# --------------- test -----------------------------
+
 shapes = [Rectangle(2, 3), Rectangle(1, 6)]
 calculator = AreaCalculator(shapes)
 print("The total area is: ", calculator.total_area)
+
+# ------------- result -------------------
+
+# The total area is:  12
