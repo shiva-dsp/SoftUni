@@ -18,6 +18,7 @@ class Manager:
         if self.worker is not None:
             self.worker.work()
 
+
 class SuperWorker:
 
     def work(self):
