@@ -24,6 +24,7 @@ class SuperWorker:
         print("I work very hard!!!")
 
 
+# ---------------- test --------------------
 
 worker = Worker()
 manager = Manager()
@@ -35,3 +36,8 @@ try:
     manager.set_worker(super_worker)
 except AssertionError:
     print("manager fails to support super_worker....")
+
+# ------------------ result ------------------
+
+# I'm working!!
+# manager fails to support super_worker....
