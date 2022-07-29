@@ -1,9 +1,14 @@
 import copy
 
-class Person:
 
+class Person:
     def __init__(self, position):
         self.position = position
+
+
+class FreePerson(Person):
+    def __init__(self, position):
+        super().__init__(position)
 
     def walk_north(self, dist):
         self.position[1] += dist
@@ -17,9 +22,9 @@ class Prisoner(Person):
 
     def __init__(self):
         super(Prisoner, self).__init__(copy.copy(self.PRISON_LOCATION))
-        self.is_free = False
 
 
+# ---------------------- test -------------------
 
 prisoner = Prisoner()
 print("The prisoner trying to walk to north by 10 and east by -3.")
@@ -27,8 +32,14 @@ print("The prisoner trying to walk to north by 10 and east by -3.")
 try:
     prisoner.walk_north(10)
     prisoner.walk_east(-3)
-except:
-    pass
+except Exception as error:
+    print(error)
 
 print(f"The location of the prison: {prisoner.PRISON_LOCATION}")
 print(f"The current position of the prisoner: {prisoner.position}")
+
+# ------------------ result -----------------
+
+# The prisoner trying to walk to north by 10 and east by -3.
+# The location of the prison: (3, 3)
+# The current position of the prisoner: (3, 3)

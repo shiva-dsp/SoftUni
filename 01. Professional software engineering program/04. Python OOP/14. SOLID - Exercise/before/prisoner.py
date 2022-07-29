@@ -20,6 +20,7 @@ class Prisoner(Person):
         self.is_free = False
 
 
+# ------------------ test -----------------
 
 prisoner = Prisoner()
 print("The prisoner trying to walk to north by 10 and east by -3.")
@@ -32,3 +33,9 @@ except:
 
 print(f"The location of the prison: {prisoner.PRISON_LOCATION}")
 print(f"The current position of the prisoner: {prisoner.position}")
+
+# ---------------- result --------------------------
+
+# The prisoner trying to walk to north by 10 and east by -3.
+# The location of the prison: [3, 3]
+# The current position of the prisoner: [0, 13]
