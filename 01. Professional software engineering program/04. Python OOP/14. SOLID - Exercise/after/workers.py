@@ -25,7 +25,7 @@ class Manager:
         self.worker = None
 
     def set_worker(self, worker):
-        assert isinstance(worker, BaseWorker), '`worker` must be of type {}'.format(BaseWorker)
+        assert isinstance(worker, BaseWorker), f'`worker` must be of type {BaseWorker}'
 
         self.worker = worker
 
