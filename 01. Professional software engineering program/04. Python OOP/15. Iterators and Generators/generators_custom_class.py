@@ -11,7 +11,20 @@ class Person:
             yield pair
 
 
+def deep_loop(ll):
+    for value in ll:
+        for x in value:
+            yield x
+
+
 doncho = Person('Doncho', 19)
 
 for x in doncho:
     print(x)
+
+people = [
+    Person('Doncho', 19),
+    Person('Pesho', 9)
+]
+
+[print(x) for x in deep_loop(people)]
