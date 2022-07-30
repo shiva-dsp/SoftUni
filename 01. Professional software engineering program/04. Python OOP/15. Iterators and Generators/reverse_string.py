@@ -1,8 +1,9 @@
 def reverse_text(text: str):
-    index = len(text) - 1
-    while index > -1:
-        yield  text[index]
-        index -= 1
+    index = 0
+    n = len(text)
+    while index < n:
+        yield  text[n - index - 1]
+        index += 1
 
 
 for char in reverse_text("step"):
