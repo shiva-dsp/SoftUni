@@ -4,11 +4,13 @@ class Person:
         self.age = age
 
     def __iter__(self):
+        return (pair for pair in self.__dict__.items())
+
         # yield ('name', self.name)
         # yield ('age', self.age)
 
-        for pair in self.__dict__.items():
-            yield pair
+        # for pair in self.__dict__.items():
+        #     yield pair
 
 
 def deep_loop(ll):
