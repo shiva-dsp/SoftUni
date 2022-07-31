@@ -9,6 +9,7 @@ def exec_time(func_ref):
 
         with open('./results.txt', 'a') as file:
             file.write(f'{func_ref.__name__} was called with {args}. Elapsed: {end - start}')
+            file.write('\n')
 
         return result
 
