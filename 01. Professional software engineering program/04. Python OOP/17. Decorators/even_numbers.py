@@ -1,4 +1,5 @@
 from functools import wraps
+from measure_time import measure_time
 
 
 def even_numbers(func):
@@ -11,7 +12,7 @@ def even_numbers(func):
 
 
 # ------------- test --------------
-
+@measure_time
 @even_numbers
 def get_numbers(numbers):
     return numbers
