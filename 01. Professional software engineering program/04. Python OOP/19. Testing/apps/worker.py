@@ -1,10 +1,12 @@
 class Worker:
+    # INITIAL_MONEY = 0
 
     def __init__(self, name, salary, energy):
         self.name = name
         self.salary = salary
         self.energy = energy
         self.money = 0
+        # self.money = self.INITIAL_MONEY
 
     def work(self):
         if self.energy <= 0:
