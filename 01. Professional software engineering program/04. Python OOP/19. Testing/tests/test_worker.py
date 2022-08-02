@@ -1,6 +1,7 @@
+import unittest
 from unittest import TestCase
 
-from apps.worker import Worker
+# from apps.worker import Worker
 
 '''
 •	Test if the worker is initialized with the correct name, salary, and energy
@@ -15,26 +16,75 @@ from apps.worker import Worker
 class WorkerTests(TestCase):
     NAME = 'Test Worker'
     SALARY = 1024
-    ENERGY = 1
+    # ENERGY = 1
+    ENERGY = 2
 
     def setUp(self) -> None:
         self.worker = Worker(self.NAME, self.SALARY, self.ENERGY)
 
-
     def test__init__when_valid_props__expect_correct_values(self):
-        pass
+        self.assertEqual(self.NAME, self.worker.name)
+        self.assertEqual(self.SALARY, self.worker.salary)
+        self.assertEqual(self.ENERGY, self.worker.energy)
+        self.assertEqual(0, self.worker.money)
+        # self.assertEqual(Worker.INITIAL_MONEY, self.worker.money)
 
     def test__rest__expect_energy_to_be_incremented(self):
-        pass
+        self.worker.rest()
+        self.assertEqual(self.ENERGY + 1, self.worker.energy)
 
-    def test__work__when_energy_is_0_expect_to_be_raise(self):
-        pass
+        # Act   Arrange           Assert
+
+    def test__work__when_energy_is_0_or_negative__expect_to_raise(self):
+        worker_1 = Worker(self.NAME, self.SALARY, 0)
+
+        with self.assertRaises(Exception) as ex_1:
+            worker_1.work()
+
+        self.assertIsNotNone(ex_1)
+
+        worker_2 = Worker(self.NAME, self.SALARY, -1)
+
+        with self.assertRaises(Exception) as ex_2:
+            worker_2.work()
+
+        self.assertIsNotNone(ex_2)
+
+    # def test__work__when_energy_is_0__expect_to_raise(self):
+    #     worker = Worker(self.NAME, self.SALARY, 0)
+    #
+    #     with self.assertRaises(Exception) as ex:
+    #         worker.work()
+    #
+    #     # self.assertIsNotNone(ex)
+    #
+    # def test__work__when_energy_is_negative__expect_to_raise(self):
+    #     worker = Worker(self.NAME, self.SALARY, -1)
+    #
+    #     with self.assertRaises(Exception) as ex:
+    #         worker.work()
+    #
+    #     # self.assertIsNotNone(ex)
 
     def test__work__when_enough_energy__expect_money_to_be_increased_by_salary(self):
-        pass
+        self.worker.work()
+        self.worker.work()
+
+        self.assertEqual(2 * self.SALARY, self.worker.money)
+        # self.assertEqual(1 * self.SALARY, self.worker.money)
 
     def test__work__when_enough_energy__expect_energy_to_decrement(self):
-        pass
+        self.worker.work()
 
-    def test__get_info__expect_corect_result(self):
-        pass
+        self.assertEqual(self.ENERGY - 1, self.worker.energy)
+
+    def test__get_info__expect_correct_result(self):
+        actual_info = self.worker.get_info()
+        expected_info = f'{self.NAME} has saved {self.worker.money} money.'
+        # expected_info = f'{self.NAME} has saved {0} money.'
+
+        self.assertEqual(expected_info, actual_info)
+
+
+if __name__ == '__main__':
+    unittest.main()
