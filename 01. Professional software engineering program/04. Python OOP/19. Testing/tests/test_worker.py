@@ -1,7 +1,7 @@
 import unittest
 from unittest import TestCase
 
-# from apps.worker import Worker
+from apps.worker import Worker
 
 '''
 •	Test if the worker is initialized with the correct name, salary, and energy
