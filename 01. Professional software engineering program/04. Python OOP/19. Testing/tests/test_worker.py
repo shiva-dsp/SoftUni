@@ -40,6 +40,7 @@ class WorkerTests(TestCase):
 
         with self.assertRaises(Exception) as ex_1:
             worker_1.work()
+        self.assertEqual('Not enough energy.', str(ex_1.exception))
 
         self.assertIsNotNone(ex_1)
 
@@ -47,6 +48,7 @@ class WorkerTests(TestCase):
 
         with self.assertRaises(Exception) as ex_2:
             worker_2.work()
+        self.assertEqual('Not enough energy.', str(ex_2.exception))
 
         self.assertIsNotNone(ex_2)
 
