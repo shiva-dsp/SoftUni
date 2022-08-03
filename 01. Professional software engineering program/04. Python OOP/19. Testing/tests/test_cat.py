@@ -20,16 +20,35 @@ class CatTests(TestCase):
 
     def test_eat__expect_size_to_increment(self):
         self.cat.eat()
-        self.assertEqual()
+        self.assertEqual(1, self.cat.size)
 
-    def test_eat__expect_to_be_true(self):
-        pass
+    def test_eat__expect_fed_to_be_true(self):
+        self.cat.eat()
+        self.assertTrue(self.cat.fed)
 
     def test_eat__when_fed_is_true_expect_to_raise(self):
-        pass
+        self.cat.eat()
+        with self.assertRaises(Exception) as ex:
+            self.cat.eat()
+        self.assertEqual('Already fed.', str(ex.exception))
+        self.assertIsNotNone(ex)
 
     def test_sleep__when_fed_is_false__expect_to_raise(self):
-        pass
+        with self.assertRaises(Exception) as ex:
+            self.cat.sleep()
+        self.assertEqual('Cannot sleep while hungry', str(ex.exception))
+        self.assertIsNotNone(ex)
 
     def test_sleep__expect_sleepy_to_be_false(self):
-        pass
+        # Arrange
+        self.cat.eat()
+
+        # Act
+        self.cat.sleep()
+
+        # Assert
+        self.assertFalse(self.cat.sleepy)
+
+
+if __name__ == '__main__':
+    unittest.main()
