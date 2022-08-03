@@ -52,22 +52,6 @@ class WorkerTests(TestCase):
 
         self.assertIsNotNone(ex_2)
 
-    # def test__work__when_energy_is_0__expect_to_raise(self):
-    #     worker = Worker(self.NAME, self.SALARY, 0)
-    #
-    #     with self.assertRaises(Exception) as ex:
-    #         worker.work()
-    #
-    #     # self.assertIsNotNone(ex)
-    #
-    # def test__work__when_energy_is_negative__expect_to_raise(self):
-    #     worker = Worker(self.NAME, self.SALARY, -1)
-    #
-    #     with self.assertRaises(Exception) as ex:
-    #         worker.work()
-    #
-    #     # self.assertIsNotNone(ex)
-
     def test__work__when_enough_energy__expect_money_to_be_increased_by_salary(self):
         self.worker.work()
         self.worker.work()
