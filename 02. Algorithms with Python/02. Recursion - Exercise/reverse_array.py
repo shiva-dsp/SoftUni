@@ -1,3 +1,5 @@
+# --------- solution by recursion ----------
+
 def reverse_array(idx, elements):
     if idx == len(elements) // 2:
         return
@@ -12,3 +14,13 @@ elements = input().split()
 reverse_array(0, elements)
 
 print(' '.join(elements))
+
+# --------- solution by an iterative approach ----------
+
+# elements = input().split()
+#
+# for left_idx in range(len(elements) // 2):
+#     right_idx = len(elements) - 1 - left_idx
+#     elements[left_idx], elements[right_idx] = elements[right_idx], elements[left_idx]
+#
+# print(' '.join(elements))
