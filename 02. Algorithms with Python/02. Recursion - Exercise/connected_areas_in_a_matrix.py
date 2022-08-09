@@ -40,3 +40,17 @@ for row in range(rows):
 print(f'Total areas found: {len(areas)}')
 for idx, area in enumerate(sorted(areas, key=lambda a: a.size, reverse=True)):
     print(f'Area #{idx + 1} at {area.row, area.col}, size: {area.size}')
+
+# --------- with tuple --------
+
+# areas = []
+# for row in range(rows):
+#     for col in range(cols):
+#         size = explore_area(row, col, matrix)
+#         if size == 0:
+#             continue
+#         areas.append((row, col, size))
+#
+# print(f'Total areas found: {len(areas)}')
+# for idx, (row, col, size) in enumerate(sorted(areas, key=lambda a: a[2], reverse=True)):
+#     print(f'Area #{idx + 1} at ({row}, {col}), size: {size}')
