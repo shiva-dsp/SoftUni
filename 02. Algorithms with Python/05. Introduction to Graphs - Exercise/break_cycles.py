@@ -46,6 +46,7 @@ print(f'Edges to remove: {len(removed_edges)}')
 for first, second in removed_edges:
     print(f'{first} - {second}')
 
+
 # ------------- tests --------------
 
 # 8
