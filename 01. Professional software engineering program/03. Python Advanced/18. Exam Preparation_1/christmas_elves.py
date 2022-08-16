@@ -1,4 +1,22 @@
+import sys
+from io import StringIO
 from collections import deque
+
+test_input_1 = '''10 16 13 25
+12 11 8
+'''
+
+test_input_2 = '''10 14 22 4 5
+11 16 17 11 1 8
+'''
+
+test_input_3 = '''5 6 7
+2 1 5 7 5 3
+'''
+
+sys.stdin = StringIO(test_input_1)
+# sys.stdin = StringIO(test_input_2)
+# sys.stdin = StringIO(test_input_3)
 
 elfs = deque(int(x) for x in input().split(' '))
 boxes = [int(x) for x in input().split(' ')]
@@ -44,3 +62,28 @@ if elfs:
     print(f'Elves left: {", ".join(str(x) for x in elfs)}')
 if boxes:
     print(f'Boxes left: {", ".join(str(x) for x in boxes)}')
+
+# ------------- tests --------------
+
+# 10 16 13 25
+# 12 11 8
+
+# 10 14 22 4 5
+# 11 16 17 11 1 8
+
+# 5 6 7
+# 2 1 5 7 5 3
+
+# --------- results ----------
+
+# Toys: 3
+# Energy: 31
+# Elves left: 3, 6, 26, 14
+
+# Toys: 7
+# Energy: 75
+# Elves left: 10, 14
+
+# Toys: 3
+# Energy: 20
+# Boxes left: 2, 1
