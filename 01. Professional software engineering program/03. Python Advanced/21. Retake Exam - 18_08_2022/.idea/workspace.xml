@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fd27d1ba-29d0-4d66-b94d-2f2c600ca410" name="Changes" comment="Added song_creator_problem_description.py.">
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="fd27d1ba-29d0-4d66-b94d-2f2c600ca410" name="Changes" comment="Added service files.">
+      <change beforePath="$PROJECT_DIR$/stewards_problem_description.py" beforeDir="false" afterPath="$PROJECT_DIR$/stewards_problem_description.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -147,7 +147,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1660802583256</updated>
-      <workItem from="1660802584579" duration="15636000" />
+      <workItem from="1660802584579" duration="15962000" />
     </task>
     <task id="LOCAL-00001" summary="Added stewards_problem_description.py.">
       <created>1660819673817</created>
@@ -170,7 +170,14 @@
       <option name="project" value="LOCAL" />
       <updated>1660819792675</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Added service files.">
+      <created>1660819992839</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1660819992839</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -192,7 +199,8 @@
     <MESSAGE value="Added stewards_problem_description.py." />
     <MESSAGE value="Added crud_problem_description.py." />
     <MESSAGE value="Added song_creator_problem_description.py." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added song_creator_problem_description.py." />
+    <MESSAGE value="Added service files." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added service files." />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/21__Retake_Exam___18_08_2022$stewards_problem_description.coverage" NAME="stewards_problem_description Coverage Results" MODIFIED="1660807334178" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
