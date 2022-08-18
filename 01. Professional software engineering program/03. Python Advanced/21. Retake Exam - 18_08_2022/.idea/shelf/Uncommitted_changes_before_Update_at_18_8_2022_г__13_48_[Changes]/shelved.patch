@@ -1,0 +1,143 @@
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+new file mode 100644
+--- /dev/null	(date 1660802648903)
++++ b/.idea/misc.xml	(date 1660802648903)
+@@ -0,0 +1,4 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.10 (Course Python Russian)" project-jdk-type="Python SDK" />
++</project>
+\ No newline at end of file
+Index: crud_problem_description.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/crud_problem_description.py b/crud_problem_description.py
+new file mode 100644
+--- /dev/null	(date 1660819510695)
++++ b/crud_problem_description.py	(date 1660819510695)
+@@ -0,0 +1,72 @@
++ROWS = 6
++COLUMNS = 6
++
++matrix = [input().split(' ') for _ in range(ROWS)]
++
++start_position = input()
++
++row = int(start_position[1])
++column = int(start_position[4])
++
++while True:
++    input_data = input().split(', ')
++
++    command = input_data[0]
++
++    if command == 'Stop':
++        break
++
++    direction = input_data[1]
++
++    if command == 'Create':
++        value = input_data[2]
++        if direction == 'up':
++            row -= 1
++        elif direction == 'down':
++            row += 1
++        elif direction == 'left':
++            column -= 1
++        elif direction == 'right':
++            column += 1
++        if matrix[row][column] == '.':
++            matrix[row][column] = value
++
++    elif command == 'Update':
++        value = input_data[2]
++        if direction == 'up':
++            row -= 1
++        elif direction == 'down':
++            row += 1
++        elif direction == 'left':
++            column -= 1
++        elif direction == 'right':
++            column += 1
++        if matrix[row][column] != '.':
++            matrix[row][column] = value
++
++    elif command == 'Delete':
++        if direction == 'up':
++            row -= 1
++        elif direction == 'down':
++            row += 1
++        elif direction == 'left':
++            column -= 1
++        elif direction == 'right':
++            column += 1
++        if matrix[row][column] != '.':
++            matrix[row][column] = '.'
++
++    elif command == 'Read':
++        if direction == 'up':
++            row -= 1
++        elif direction == 'down':
++            row += 1
++        elif direction == 'left':
++            column -= 1
++        elif direction == 'right':
++            column += 1
++        if matrix[row][column] != '.':
++            print(matrix[row][column])
++
++for row in matrix:
++    print(' '.join(row))
+\ No newline at end of file
+Index: song_creator_problem_description.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/song_creator_problem_description.py b/song_creator_problem_description.py
+new file mode 100644
+--- /dev/null	(date 1660815160394)
++++ b/song_creator_problem_description.py	(date 1660815160394)
+@@ -0,0 +1,34 @@
++def add_songs(*args):
++    album = {}
++
++    for element in args:
++        song_title = element[0]
++        song_lyrics = element[1]
++
++        if song_title not in album:
++            album[song_title] = []
++            album[song_title] = song_lyrics
++        else:
++            album[song_title].extend(song_lyrics)
++
++    total_result = ''
++
++    for title, lyrics in album.items():
++        result = f'- {title}' + '\n'
++        if lyrics:
++            for text in lyrics:
++                result += text + '\n'
++
++        total_result += result
++
++    return total_result
++
++
++print(add_songs(
++    ("Bohemian Rhapsody", []),
++    ("Just in Time",
++     ["Just in time, I found you just in time",
++      "Before you came, my time was running low",
++      "I was lost, the losing dice were tossed",
++      "My bridges all were crossed, nowhere to go"])
++))
+\ No newline at end of file
