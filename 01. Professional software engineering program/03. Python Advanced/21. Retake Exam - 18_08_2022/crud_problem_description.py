@@ -70,3 +70,79 @@ while True:
 
 for row in matrix:
     print(' '.join(row))
+
+# ------------- tests --------------
+
+# . . . . . .
+# . 6 . . . .
+# G . S . t S
+# . . 10 . . .
+# . 95 . . 8 .
+# . . P . . .
+# (1, 1)
+# Create, down, r
+# Update, right, e
+# Create, right, a
+# Read, right
+# Delete, right
+# Stop
+
+
+# . . . . . .
+# . 6 . . . .
+# . T . D . O
+# . . 10 A . .
+# . 95 . 80 5 .
+# . . P . t .
+# (2, 3)
+# Create, down, o
+# Delete, right
+# Read, up
+# Create, left, 20
+# Update, up, P
+# Stop
+
+
+# H 8 . . . .
+# 70 i . . . .
+# t . . . B .
+# 50 . 16 . C .
+# . . . t . .
+# . 25 . . . .
+# (0, 0)
+# Read, right
+# Read, down
+# Read, left
+# Delete, down
+# Create, right, 10
+# Read, left
+# Stop
+
+# --------- results ----------
+
+# t
+# . . . . . .
+# . 6 . . . .
+# G r e a t .
+# . . 10 . . .
+# . 95 . . 8 .
+# . . P . . .
+
+
+# . . . . . .
+# . 6 . . . .
+# . T . D . O
+# . . 10 A . .
+# . 95 . 80 5 .
+# . . P . t .
+
+
+# 8
+# i
+# 70
+# H 8 . . . .
+# 70 i . . . .
+# . 10 . . B .
+# 50 . 16 . C .
+# . . . t . .
+# . 25 . . . .
