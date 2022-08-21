@@ -37,15 +37,9 @@ class Controller:
         first_player = self.__find_player_by_name(first_player_name)
         second_player = self.__find_player_by_name(second_player_name)
 
-        error_message = ''
-
-        if first_player.stamina == 0:
-            error_message += f'Player {first_player.name} does not have enough stamina.'
-        if second_player.stamina == 0:
-            error_message += '\n' + f'Player {second_player.name} does not have enough stamina.'
-
+        error_message = self.__get_error_message(first_player, second_player)
         if error_message:
-            return error_message.strip()
+            return error_message
 
         if second_player.stamina < first_player.stamina:
             first_player, second_player = second_player, first_player
@@ -55,7 +49,7 @@ class Controller:
         if second_player.stamina == 0:
             return f'Winner: {first_player.name}'
 
-        second_player_damage = first_player.stamina / 2
+        second_player_damage = second_player.stamina / 2
         first_player.stamina = max(first_player.stamina - second_player_damage, 0)
         if first_player.stamina == 0:
             return f'Winner: {second_player.name}'
@@ -80,3 +74,11 @@ class Controller:
             if supply.__class__.__name__ == sustenance_type:
                 return idx, supply
         return -1, None
+
+    def __get_error_message(self, first_player, second_player):
+        error_message = ''
+        if first_player.stamina == 0:
+            error_message += f'Player {first_player.name} does not have enough stamina.'
+        if second_player.stamina == 0:
+            error_message += '\n' + f'Player {second_player.name} does not have enough stamina.'
+        return error_message.strip()
