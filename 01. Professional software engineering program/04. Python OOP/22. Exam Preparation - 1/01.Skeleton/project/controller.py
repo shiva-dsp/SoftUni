@@ -44,24 +44,26 @@ class Controller:
         if second_player.stamina < first_player.stamina:
             first_player, second_player = second_player, first_player
 
-        first_player_damage = first_player.stamina / 2
-        second_player.stamina = max(second_player.stamina - first_player_damage, 0)
-        if second_player.stamina == 0:
+        first_player_win = self.__attack(first_player, second_player)
+        if first_player_win:
             return f'Winner: {first_player.name}'
 
-        second_player_damage = second_player.stamina / 2
-        first_player.stamina = max(first_player.stamina - second_player_damage, 0)
-        if first_player.stamina == 0:
+        second_player_win = self.__attack(second_player, first_player)
+        if second_player_win:
             return f'Winner: {second_player.name}'
 
         winner = first_player if first_player.stamina > second_player.stamina else second_player
         return f'Winner: {winner.name}'
 
     def next_day(self):
-        pass
+        for player in self.players:
+            player.stamina = max(player.stamina - player.age * 2, 0)
+            self.sustain(player.name, 'Food')
+            self.sustain(player.name, 'Drink')
 
     def __str__(self):
-        return ''
+        return '\n'.join([str(x) for x in self.players]) + '\n' + \
+                 '\n'.join([x.details() for x in self.supplies])
 
     def __find_player_by_name(self, player_name):
         for player in self.players:
@@ -82,3 +84,8 @@ class Controller:
         if second_player.stamina == 0:
             error_message += '\n' + f'Player {second_player.name} does not have enough stamina.'
         return error_message.strip()
+
+    def __attack(self, attacker, enemy):
+        attacker_damage = attacker.stamina / 2
+        enemy.stamina = max(enemy.stamina - attacker_damage, 0)
+        return enemy.stamina == 0
