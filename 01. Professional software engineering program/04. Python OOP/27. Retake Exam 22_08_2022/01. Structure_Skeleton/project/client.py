@@ -21,3 +21,4 @@ class Client:
             raise ValueError('Invalid phone number!')
 
         self.__phone_number = value
+        return
