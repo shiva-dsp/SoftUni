@@ -28,5 +28,6 @@ class Meal(ABC):
             raise ValueError('Invalid price!')
         self.__price = value
 
+    @abstractmethod
     def details(self):
         pass
