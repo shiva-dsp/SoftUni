@@ -1,4 +1,5 @@
 from project.meals.meal import Meal
+from project.client import Client
 
 
 class FoodOrdersApp:
@@ -9,7 +10,11 @@ class FoodOrdersApp:
         self.clients_list = []
 
     def register_client(self, client_phone_number: str):
-        pass
+        for client in self.clients_list:
+            if client.phone_number == client_phone_number:
+                raise Exception('The client has already been registered!')
+        self.clients_list.append(Client(client_phone_number))
+        return f'Client {client_phone_number} registered successfully.'
 
     def add_meals_to_menu(self, *meals: Meal):
         pass
