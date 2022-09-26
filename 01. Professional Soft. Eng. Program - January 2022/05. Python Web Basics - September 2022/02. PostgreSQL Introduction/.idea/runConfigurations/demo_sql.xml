@@ -1,0 +1,8 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="demo.sql" type="DatabaseScript" editBeforeRun="true" nameIsGenerated="true">
+    <script-file value="$PROJECT_DIR$/demo.sql" />
+    <script-mode>FILE</script-mode>
+    <data-source id="d36e314e-d3e6-4654-ab96-0ece73faf92e" namespace="database/&quot;game_bar&quot;/schema/&quot;public&quot;" />
+    <method v="2" />
+  </configuration>
+</component>
