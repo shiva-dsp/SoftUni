@@ -31,12 +31,20 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = (
+    ## Django apps
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+
+
+    ## Third-party apps
+
+
+    ## Application apps
+    "django101.tasks",
 )
 
 MIDDLEWARE = [
@@ -74,10 +82,24 @@ WSGI_APPLICATION = "django101.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
+## SQLite
+# DATABASES = {
+#     "default": {
+#         "ENGINE": "django.db.backends.sqlite3",
+#         "NAME": BASE_DIR / "db.sqlite3",
+#     }
+# }
+
+## PostgreSQL
+## Hide credentials with 'env variables'
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'tasks_db',
+        'USER': 'admin',
+        'PASSWORD': 'secret',
+        'HOST': 'localhost',  # 'localhost' is an alias of 127.0.0.1 ///  Don't use host.docker.internal like a pgAdmin4
+        'PORT': '5432',
     }
 }
 
