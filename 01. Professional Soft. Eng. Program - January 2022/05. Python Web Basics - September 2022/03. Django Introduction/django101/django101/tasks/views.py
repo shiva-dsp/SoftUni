@@ -1,3 +1,8 @@
+from django import http
 from django.shortcuts import render
 
-# Create your views here.
+# django101.tasks.views.py
+
+
+def index(request):
+    return http.HttpResponse('It works ...')
