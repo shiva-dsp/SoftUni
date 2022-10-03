@@ -23,4 +23,6 @@ urlpatterns = [
     # SITE_URL/tasks/ (localhost:8000/tasks)
     path("tasks/", include("django101.tasks.urls")),
     # path("auth/", include("django101.auth.urls")),
+
+    path("api-auth/", include("rest_framework.urls"))
 ]
