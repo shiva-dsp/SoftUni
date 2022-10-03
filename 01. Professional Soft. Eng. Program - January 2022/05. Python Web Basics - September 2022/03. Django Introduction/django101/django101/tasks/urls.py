@@ -2,10 +2,12 @@
 
 from django.urls import path
 
-from django101.tasks.views import show_bare_minimum_view, show_all_tasks
+from django101.tasks.views import show_bare_minimum_view, show_all_tasks, index
 
 urlpatterns = (
-    # localhost:8000/tasks/ or http://localhost:8000/tasks/it_works
+    # http://localhost:8000/tasks/
+    path("", index),
+    # localhost:8000/tasks/it_works or http://localhost:8000/tasks/it_works
     path("it_works/", show_bare_minimum_view),
     # localhost:8000/tasks/all or http://localhost:8000/tasks/all
     path("all/", show_all_tasks),
