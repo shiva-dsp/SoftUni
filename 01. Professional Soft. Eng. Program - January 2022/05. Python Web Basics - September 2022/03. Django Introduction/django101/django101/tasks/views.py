@@ -20,4 +20,7 @@ def show_all_tasks(request):
 
 
 def index(request):
-    return render(request, "index.html")
+    context = {
+        "title": "The tasks app!",
+    }
+    return render(request, "index.html", context)
