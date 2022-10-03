@@ -4,6 +4,7 @@ from django import http
 from django.shortcuts import render
 
 from django101.tasks.models import Task
+from django101.tasks.tasks_utils import get_all_tasks
 
 
 # django101.tasks.views.py
@@ -14,7 +15,7 @@ def show_bare_minimum_view(request):
 
 
 def show_all_tasks(request):
-    all_tasks = Task.objects.order_by("id").all()
+    all_tasks = get_all_tasks()
     # [name(id), name(id)]
     result = ", ".join(f"{t.name}({t.id})" for t in all_tasks)
 
@@ -22,7 +23,7 @@ def show_all_tasks(request):
 
 
 def index(request):
-    all_tasks = Task.objects.order_by("id").all()
+    all_tasks = get_all_tasks()
     context = {
         "title": "The tasks app!",
         "tasks": all_tasks,
