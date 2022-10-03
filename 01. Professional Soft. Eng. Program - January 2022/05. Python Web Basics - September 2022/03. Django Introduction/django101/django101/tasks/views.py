@@ -1,3 +1,5 @@
+
+
 from django import http
 from django.shortcuts import render
 
@@ -20,7 +22,9 @@ def show_all_tasks(request):
 
 
 def index(request):
+    all_tasks = Task.objects.order_by("id").all()
     context = {
         "title": "The tasks app!",
+        "tasks": all_tasks,
     }
     return render(request, "index.html", context)
