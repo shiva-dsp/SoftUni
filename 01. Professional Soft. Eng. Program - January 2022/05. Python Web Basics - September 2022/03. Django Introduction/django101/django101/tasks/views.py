@@ -17,3 +17,7 @@ def show_all_tasks(request):
     result = ", ".join(f"{t.name}({t.id})" for t in all_tasks)
 
     return http.HttpResponse(result)
+
+
+def index(request):
+    return render(request, "index.html")
